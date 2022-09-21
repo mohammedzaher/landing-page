@@ -32,13 +32,13 @@ const navList = document.querySelector("ul");
  *
 */
 
-function buildNav() {
+function buildNavBar() {
     let fragment = document.createDocumentFragment();
     for (const section of sections) {
-        let anchorText = section.getAttribute("data-nav");
-        let anchorHref = section.getAttribute("id");
-        let listItem = document.createElement("li");
-        let anchor = document.createElement("a");
+        const anchorText = section.getAttribute("data-nav");
+        const anchorHref = section.getAttribute("id");
+        const listItem = document.createElement("li");
+        const anchor = document.createElement("a");
         anchor.setAttribute("href", `#${anchorHref}`);
         anchor.setAttribute("class", "menu__link");
         anchor.textContent = anchorText;
@@ -67,7 +67,7 @@ function isInViewPort(element) {
 
 // build the nav
 
-buildNav();
+buildNavBar();
 
 // Add class 'your-active-class' to section when exists in the viewport
 
