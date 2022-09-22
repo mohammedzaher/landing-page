@@ -32,6 +32,8 @@ const navList = document.querySelector("ul");
  *
 */
 
+// Build the navigation bar
+
 function buildNavBar() {
     let fragment = document.createDocumentFragment();
     for (const section of sections) {
@@ -42,6 +44,7 @@ function buildNavBar() {
         anchor.setAttribute("href", `#${anchorHref}`);
         anchor.setAttribute("class", "menu__link");
         anchor.textContent = anchorText;
+        // Add an event to the anchor to scroll smoothly
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
             section.scrollIntoView({
@@ -53,6 +56,8 @@ function buildNavBar() {
     }
     navList.appendChild(fragment);
 }
+
+// Check if the given element exists in viewport
 
 function isInViewPort(element) {
     const sectionPos = element.getBoundingClientRect();
